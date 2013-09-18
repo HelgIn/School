@@ -1,4 +1,4 @@
-package com.server;
+package com.client;
 
 import com.entity.Train;
 import com.services.TrainService;
@@ -16,22 +16,18 @@ public class ServerThread extends Thread {
 
     public void run() {
         try {
-            System.out.println("New thread");
             DataInputStream in = new DataInputStream(socket.getInputStream());
             DataOutputStream out = new DataOutputStream(socket.getOutputStream());
 
             ObjectInputStream inObj = new ObjectInputStream(in);
-
-            TrainService ts = new TrainService();
-            ts.addTrain((Train)inObj.readObject());
-
-
-
+            try {
+                System.out.println(inObj.readObject().toString());
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
 
         } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
+            System.out.println("Невозможно прочитать данные");
         } finally {
             try {
                 socket.close();

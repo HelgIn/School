@@ -1,7 +1,9 @@
-package com.server;
+package com.client;
 
 import com.entity.Train;
 
+import javax.swing.*;
+import java.awt.*;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -9,16 +11,26 @@ import java.io.ObjectOutputStream;
 import java.net.Socket;
 
 public class Client {
-    Socket client;
+    private Socket client;
+    private DataInputStream in;
+    private DataOutputStream out;
+    private ObjectOutputStream outObj;
     Client() {
         try {
             client = new Socket("localhost", 8080);
-            DataInputStream in = new DataInputStream(client.getInputStream());
-            DataOutputStream out = new DataOutputStream(client.getOutputStream());
 
-            ObjectOutputStream outObj = new ObjectOutputStream(out);
-            Train tr  = new Train(44, 55);
+            in = new DataInputStream(client.getInputStream());
+            out = new DataOutputStream(client.getOutputStream());
+
+            outObj = new ObjectOutputStream(out);
+            Train tr = new Train(32, 56);
             outObj.writeObject(tr);
+            outObj.flush();
+            outObj.reset();
+            Train tr1 = new Train(36, 96);
+            outObj.writeObject(tr1);
+            //Frame wnd = new Frame(outObj);
+            //wnd.setVisible(true);
 
             while(true) {
 

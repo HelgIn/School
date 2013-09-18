@@ -1,4 +1,4 @@
-package com.server;
+package com.test;
 
 import com.entity.*;
 import com.services.TrainService;
