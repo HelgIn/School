@@ -23,16 +23,16 @@ public class ServerThread extends Thread {
             try {
                 System.out.println(inObj.readObject().toString());
             } catch (ClassNotFoundException e) {
-                e.printStackTrace();
+                System.out.println("Невозможно прочитать данные");
             }
 
         } catch (IOException e) {
-            System.out.println("Невозможно прочитать данные");
+            System.out.println("Message error");
         } finally {
             try {
                 socket.close();
             } catch (IOException e) {
-                e.printStackTrace();
+                System.err.println("Could not listen on port: 8080");
             }
         }
     }

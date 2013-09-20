@@ -23,14 +23,9 @@ public class Client {
             out = new DataOutputStream(client.getOutputStream());
 
             outObj = new ObjectOutputStream(out);
-            Train tr = new Train(32, 56);
-            outObj.writeObject(tr);
-            outObj.flush();
-            outObj.reset();
-            Train tr1 = new Train(36, 96);
-            outObj.writeObject(tr1);
-            //Frame wnd = new Frame(outObj);
-            //wnd.setVisible(true);
+
+            Frame wnd = new Frame(outObj);
+            wnd.setVisible(true);
 
             while(true) {
 

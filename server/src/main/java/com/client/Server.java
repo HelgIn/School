@@ -5,7 +5,7 @@ import java.net.ServerSocket;
 
 public class Server {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args)  {
         ServerSocket serverSocket = null;
         boolean listening = true;
         try {
@@ -14,8 +14,16 @@ public class Server {
             System.err.println("Could not listen on port: 8080");
         }
         while (listening) {
-            new ServerThread(serverSocket.accept()).start();
+            try {
+                new ServerThread(serverSocket.accept()).start();
+            } catch (IOException e) {
+                System.err.println("Could not listen on port: 8080");
+            }
         }
-        serverSocket.close();
+        try {
+            serverSocket.close();
+        } catch (IOException e) {
+            System.err.println("Could not listen on port: 8080");
+        }
     }
 }
