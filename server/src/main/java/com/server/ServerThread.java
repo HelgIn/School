@@ -1,7 +1,4 @@
-package com.client;
-
-import com.entity.Train;
-import com.services.TrainService;
+package com.server;
 
 import java.io.*;
 import java.net.Socket;

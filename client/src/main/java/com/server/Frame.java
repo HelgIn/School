@@ -1,6 +1,5 @@
-package com.client;
+package com.server;
 
-import listeners.AddTrain;
 import listeners.Search;
 
 import javax.swing.*;
