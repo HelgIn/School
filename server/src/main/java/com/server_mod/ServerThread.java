@@ -1,4 +1,7 @@
-package com.server;
+package com.server_mod;
+
+import com.dto.SearchInfo;
+import com.dto.TicketInfo;
 
 import java.io.*;
 import java.net.Socket;
@@ -18,10 +21,16 @@ public class ServerThread extends Thread {
 
             ObjectInputStream inObj = new ObjectInputStream(in);
             try {
-                System.out.println(inObj.readObject().toString());
+                SearchInfo si = (SearchInfo) inObj.readObject();
+                System.out.println(si.getFrom());
             } catch (ClassNotFoundException e) {
-                System.out.println("Невозможно прочитать данные");
+                e.printStackTrace();
             }
+            while (true) {
+
+            }
+
+
 
         } catch (IOException e) {
             System.out.println("Message error");

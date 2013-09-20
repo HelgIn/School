@@ -1,4 +1,4 @@
-package com.server;
+package com.client;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -18,15 +18,15 @@ public class Client {
             in = new DataInputStream(client.getInputStream());
             out = new DataOutputStream(client.getOutputStream());
 
+
             outObj = new ObjectOutputStream(out);
 
-            Frame wnd = new Frame(outObj);
+            TicketFrame wnd = new TicketFrame(outObj);
             wnd.setVisible(true);
 
-            while(true) {
+            while (true) {
 
             }
-
 
         } catch (IOException e) {
             e.printStackTrace();
