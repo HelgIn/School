@@ -5,39 +5,38 @@ import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Journey")
+@Table(name="Journey")
 public class Journey {
-
     @Id
     @GeneratedValue(generator="increment")
-    @GenericGenerator(name="increment", strategy="increment" )
+    @GenericGenerator(name="increment", strategy="increment")
     @Column(name="id")
     private long id;
+
+    @Column(name="available_seats")
     private int availableSeats;
-    private String arrivalDate;
-    private long routeId;
-
-    Journey() {
-
-    }
-
-    Journey(int availableSeats, String arrivalDate, long routeId) {
-        this.arrivalDate = arrivalDate;
+    public void setAvailableSeats(int availableSeats) {
         this.availableSeats = availableSeats;
-        this.routeId = routeId;
     }
 
-    public int getAvailableSeats() {
-        return availableSeats;
+    @Column(name="arrival_time")
+    private String arrivalTime;
+    public void setArrivalTime(String arrivalTime) {
+        this.arrivalTime = arrivalTime;
     }
 
-    @Column(name="arrival_date")
-    public String getArrivalDate() {
-        return arrivalDate;
+    public Journey(int availableSeats, String arrivalTime) {
+        this.availableSeats = availableSeats;
+        this.arrivalTime = arrivalTime;
     }
 
-    @Column(name="route_id")
-    public long getRouteId() {
-        return routeId;
+    @ManyToOne
+    @JoinColumn(name="route_id")
+    private Route route;
+    public Route getRoute() {
+        return route;
+    }
+    public void setRoute(Route id_route) {
+        this.route = id_route;
     }
 }

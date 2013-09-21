@@ -1,5 +1,6 @@
 package com.entity;
 
+
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -7,33 +8,33 @@ import javax.persistence.*;
 @Entity
 @Table(name="Ticket")
 public class Ticket {
-    private long id;
-    private long journeyId;
-    private long userId;
-
-    Ticket(){
-
-    }
-
-    Ticket(long userId, long journeyId) {
-        this.userId = userId;
-        this.journeyId = journeyId;
-    }
     @Id
     @GeneratedValue(generator="increment")
-    @GenericGenerator(name="increment", strategy="increment")
-    @Column(name="id")
-    public long getId() {
-        return id;
+    @GenericGenerator(name="increment", strategy="increment" )
+    @Column(name ="id")
+    private int id_book;
+
+
+    @ManyToOne
+    private Passenger passenger;
+    public Passenger getPassenger() {
+        return passenger;
+    }
+    public void setPassenger(Passenger id_passenger) {
+        this.passenger = id_passenger;
     }
 
-    @Column(name="journey_id")
-    public long getJourneyId() {
-        return  journeyId;
+
+    @ManyToOne
+    private Journey journey;
+    public Journey getJourney() {
+        return journey;
+    }
+    public void setJourney(Journey id_journey) {
+        this.journey = id_journey;
     }
 
-    @Column(name="user_id")
-    public long getUserId() {
-        return userId;
-    }
+
+
+
 }

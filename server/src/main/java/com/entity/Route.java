@@ -16,17 +16,26 @@ public class Route {
 
     private String name;
 
-    Route() {
+    public Route() {
 
     }
 
-
-    Route(String name) {
+    public Route(String name) {
         this.name = name;
     }
 
     @Column(name="name")
     public String getName() {
         return name;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    @Override
+    public String toString() {
+
+        return this.getId() + ": " + this.getName();
     }
 }

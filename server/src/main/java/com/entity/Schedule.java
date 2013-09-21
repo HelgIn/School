@@ -1,6 +1,8 @@
 package com.entity;
 
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 
 
@@ -8,22 +10,20 @@ import javax.persistence.*;
 @Table(name = "Schedule")
 public class Schedule {
 
-    private long stationFrom;
-    private long stationTo;
     private long delayTime;
     private int orderNo;
-    private long routeId;
-
-    Schedule() {
+    @Id
+    @GeneratedValue(generator="increment")
+    @GenericGenerator(name="increment", strategy="increment")
+    @Column(name="id")
+    private long id;
+    public Schedule() {
 
     }
 
-    Schedule(long stationFrom, long stationTo, long delayTime, int orderNo, long routeId) {
+    public Schedule(long delayTime, int orderNo) {
         this.delayTime = delayTime;
         this.orderNo = orderNo;
-        this.routeId = routeId;
-        this.stationFrom = stationFrom;
-        this.stationTo = stationTo;
 
     }
 
@@ -32,24 +32,37 @@ public class Schedule {
         return orderNo;
     }
 
-    @Column(name="station_from")
-    public long getStationFrom() {
-        return stationFrom;
-    }
-
-    @Column(name="station_to")
-    public long getStationTo() {
-        return stationTo;
-    }
 
     @Column(name="delay_time")
     public long getDelayTime() {
         return delayTime;
     }
 
-    @Column(name="route_id")
-    public long getRouteId() {
-        return routeId;
+    @ManyToOne
+    private Route route;
+    public Route getRoute() {
+        return route;
+    }
+    public void setRoute(Route id_route) {
+        this.route = id_route;
+    }
+
+    @ManyToOne
+    private Station stationFrom;
+    public Station getStationFrom() {
+        return stationFrom;
+    }
+    public void setStationFrom(Station id_from) {
+        this.stationFrom = id_from;
+    }
+
+    @ManyToOne
+    private Station stationTo;
+    public Station getStationTo() {
+        return stationTo;
+    }
+    public void setStationTo(Station id_to) {
+        this.stationTo = id_to;
     }
 
 }

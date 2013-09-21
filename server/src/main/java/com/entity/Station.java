@@ -1,3 +1,4 @@
+
 package com.entity;
 
 import org.hibernate.annotations.GenericGenerator;
@@ -10,11 +11,11 @@ public class Station {
     private long id;
     private String name;
 
-    Station() {
+    public Station() {
 
     }
 
-    Station(String name) {
+    public Station(String name) {
         this.name = name;
     }
 
@@ -31,4 +32,12 @@ public class Station {
         return name;
     }
 
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }
+
