@@ -65,4 +65,9 @@ public class Schedule {
         this.stationTo = id_to;
     }
 
+    @Override
+    public String toString() {
+         return "Schedule { delayTime: " + getDelayTime() + ", orderNo: " + getOrderNo() + ", routeId: { " + getRoute() + " } , from: " + getStationFrom() + ", to: " + getStationTo() + " }";
+    }
+
 }

@@ -2,36 +2,31 @@ package com.dto;
 
 import java.io.Serializable;
 
-/*
- *
- *
- */
+
 public class SearchInfo implements Serializable {
-    //private String arrivalStation;
-    //private String destinationStation;
 
-    private long arrivalID;
-    private long destinationID;
-
+    //static final long serialVersionUID = -2098940495326113907L;
     private String from;
+    private String to;
 
-    SearchInfo(long arrivalID, long destinationID) {
-        this.arrivalID = arrivalID;
-        this.destinationID = destinationID;
-    }
-    public SearchInfo(String from) {
-         this.from = from;
+
+    public SearchInfo(String from, String to) {
+        this.from = from;
+        this.to = to;
     }
 
-    public long getArrivalID() {
-        return arrivalID;
-    }
-    public long getDestinationID() {
-        return destinationID;
-    }
+
+
     public String getFrom() {
         return from;
     }
+    public String getTo() {
+        return to;
+    }
 
+    @Override
+    public String toString() {
+        return getFrom() + " - " + getTo();
+    }
 
 }

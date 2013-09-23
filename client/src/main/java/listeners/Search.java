@@ -13,6 +13,6 @@ public class Search implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        //To change body of implemented methods use File | Settings | File Templates.
+
     }
 }

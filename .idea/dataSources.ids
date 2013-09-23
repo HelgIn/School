@@ -2274,6 +2274,64 @@
       <index name="idx_unique_manager" unique="true" columns="manager_staff_id"/>
       <index name="idx_fk_address_id" unique="false" columns="address_id"/>
     </table>
+    <table name="journey" schema="" catalog="school" type="TABLE">
+      <column name="id" sqlType="BIGINT" length="19" precision="0" nullable="false" jdbcType="-5"/>
+      <column name="arrival_time" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="available_seats" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4"/>
+      <column name="route_id" sqlType="BIGINT" length="19" precision="0" nullable="true" jdbcType="-5"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="FK_4fc0371528a1411590a02f991cf" columns="route_id" ref-table="route" ref-schema="" ref-catalog="school" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="FK_6ddd15546ac346ea889b79fcbf9" table="ticket" schema="" catalog="school" columns="journey_id"/>
+    </table>
+    <table name="passenger" schema="" catalog="school" type="TABLE">
+      <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="date" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="name" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="second_name" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="FK_c0325fc04a2446d9a4fa1f4469c" table="ticket" schema="" catalog="school" columns="passenger_id"/>
+    </table>
+    <table name="route" schema="" catalog="school" type="TABLE">
+      <column name="id" sqlType="BIGINT" length="19" precision="0" nullable="false" jdbcType="-5"/>
+      <column name="name" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="FK_4fc0371528a1411590a02f991cf" table="journey" schema="" catalog="school" columns="route_id"/>
+      <exported-key name="FK_2c9837ffbb3042c7b604a05c4f6" table="schedule" schema="" catalog="school" columns="route_id"/>
+    </table>
+    <table name="schedule" schema="" catalog="school" type="TABLE">
+      <column name="id" sqlType="BIGINT" length="19" precision="0" nullable="false" jdbcType="-5"/>
+      <column name="delayTime" sqlType="BIGINT" length="19" precision="0" nullable="false" jdbcType="-5"/>
+      <column name="orderNo" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="route_id" sqlType="BIGINT" length="19" precision="0" nullable="true" jdbcType="-5"/>
+      <column name="stationFrom_id" sqlType="BIGINT" length="19" precision="0" nullable="true" jdbcType="-5"/>
+      <column name="stationTo_id" sqlType="BIGINT" length="19" precision="0" nullable="true" jdbcType="-5"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="FK_2c9837ffbb3042c7b604a05c4f6" columns="route_id" ref-table="route" ref-schema="" ref-catalog="school" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_82a32ee5944e4a0bbc52e431fce" columns="stationTo_id" ref-table="station" ref-schema="" ref-catalog="school" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_a837710ac01f4c2b97a09ec94e2" columns="stationFrom_id" ref-table="station" ref-schema="" ref-catalog="school" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+    </table>
+    <table name="station" schema="" catalog="school" type="TABLE">
+      <column name="id" sqlType="BIGINT" length="19" precision="0" nullable="false" jdbcType="-5"/>
+      <column name="name" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="FK_82a32ee5944e4a0bbc52e431fce" table="schedule" schema="" catalog="school" columns="stationTo_id"/>
+      <exported-key name="FK_a837710ac01f4c2b97a09ec94e2" table="schedule" schema="" catalog="school" columns="stationFrom_id"/>
+    </table>
+    <table name="ticket" schema="" catalog="school" type="TABLE">
+      <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="journey_id" sqlType="BIGINT" length="19" precision="0" nullable="true" jdbcType="-5"/>
+      <column name="passenger_id" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="FK_6ddd15546ac346ea889b79fcbf9" columns="journey_id" ref-table="journey" ref-schema="" ref-catalog="school" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_c0325fc04a2446d9a4fa1f4469c" columns="passenger_id" ref-table="passenger" ref-schema="" ref-catalog="school" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+    </table>
+    <table name="train" schema="" catalog="school" type="TABLE">
+      <column name="id" sqlType="BIGINT" length="19" precision="0" nullable="false" jdbcType="-5"/>
+      <column name="count" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4"/>
+      <column name="number" sqlType="BIGINT" length="19" precision="0" nullable="true" jdbcType="-5"/>
+      <column name="route" sqlType="BIGINT" length="19" precision="0" nullable="true" jdbcType="-5"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
     <table name="article" schema="" catalog="test" type="TABLE">
       <column name="id" sqlType="BIGINT" length="19" precision="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
       <column name="title" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
@@ -2307,8 +2365,10 @@
     <table name="journey" schema="" catalog="tickets" type="TABLE">
       <column name="id" sqlType="BIGINT" length="19" precision="0" nullable="false" jdbcType="-5"/>
       <column name="route_id" sqlType="BIGINT" length="19" precision="0" nullable="true" jdbcType="-5"/>
+      <column name="arrival_time" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="available_seats" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4"/>
       <primary-key name="PRIMARY" columns="id"/>
-      <foreign-key name="FK_9fc1d0a27aa34596b5e1fc3b5f6" columns="route_id" ref-table="route" ref-schema="" ref-catalog="tickets" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_e5c5f2f964f245889fad1478a5e" columns="route_id" ref-table="route" ref-schema="" ref-catalog="tickets" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <exported-key name="FK_78495ce308db49118fe8e1a0567" table="ticket" schema="" catalog="tickets" columns="journey_id"/>
     </table>
     <table name="passenger" schema="" catalog="tickets" type="TABLE">
@@ -2323,8 +2383,8 @@
       <column name="id" sqlType="BIGINT" length="19" precision="0" nullable="false" jdbcType="-5"/>
       <column name="name" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
       <primary-key name="PRIMARY" columns="id"/>
-      <exported-key name="FK_9fc1d0a27aa34596b5e1fc3b5f6" table="journey" schema="" catalog="tickets" columns="route_id"/>
-      <exported-key name="FK_3f3d0ec9914b4ae38f0a76234ca" table="schedule" schema="" catalog="tickets" columns="route_id"/>
+      <exported-key name="FK_e5c5f2f964f245889fad1478a5e" table="journey" schema="" catalog="tickets" columns="route_id"/>
+      <exported-key name="FK_ebb2eed9924746ee992fd3f0891" table="schedule" schema="" catalog="tickets" columns="route_id"/>
     </table>
     <table name="schedule" schema="" catalog="tickets" type="TABLE">
       <column name="id" sqlType="BIGINT" length="19" precision="0" nullable="false" jdbcType="-5"/>
@@ -2334,24 +2394,24 @@
       <column name="stationFrom_id" sqlType="BIGINT" length="19" precision="0" nullable="true" jdbcType="-5"/>
       <column name="stationTo_id" sqlType="BIGINT" length="19" precision="0" nullable="true" jdbcType="-5"/>
       <primary-key name="PRIMARY" columns="id"/>
-      <foreign-key name="FK_253e46bfe4de467ca098cf15aae" columns="stationTo_id" ref-table="station" ref-schema="" ref-catalog="tickets" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
-      <foreign-key name="FK_3f3d0ec9914b4ae38f0a76234ca" columns="route_id" ref-table="route" ref-schema="" ref-catalog="tickets" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
-      <foreign-key name="FK_602063dcd95944f680aa5174502" columns="stationFrom_id" ref-table="station" ref-schema="" ref-catalog="tickets" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_67d7673b993c4b3ab2dbc0fe4ce" columns="stationTo_id" ref-table="station" ref-schema="" ref-catalog="tickets" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_ebb2eed9924746ee992fd3f0891" columns="route_id" ref-table="route" ref-schema="" ref-catalog="tickets" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_ffff0d0797924fd99233d1838c2" columns="stationFrom_id" ref-table="station" ref-schema="" ref-catalog="tickets" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
     </table>
     <table name="station" schema="" catalog="tickets" type="TABLE">
       <column name="id" sqlType="BIGINT" length="19" precision="0" nullable="false" jdbcType="-5"/>
       <column name="name" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
       <primary-key name="PRIMARY" columns="id"/>
-      <exported-key name="FK_253e46bfe4de467ca098cf15aae" table="schedule" schema="" catalog="tickets" columns="stationTo_id"/>
-      <exported-key name="FK_602063dcd95944f680aa5174502" table="schedule" schema="" catalog="tickets" columns="stationFrom_id"/>
+      <exported-key name="FK_67d7673b993c4b3ab2dbc0fe4ce" table="schedule" schema="" catalog="tickets" columns="stationTo_id"/>
+      <exported-key name="FK_ffff0d0797924fd99233d1838c2" table="schedule" schema="" catalog="tickets" columns="stationFrom_id"/>
     </table>
     <table name="ticket" schema="" catalog="tickets" type="TABLE">
       <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
       <column name="journey_id" sqlType="BIGINT" length="19" precision="0" nullable="true" jdbcType="-5"/>
       <column name="passenger_id" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4"/>
       <primary-key name="PRIMARY" columns="id"/>
-      <foreign-key name="FK_9dea05573cd14c61a458a8981ba" columns="passenger_id" ref-table="passenger" ref-schema="" ref-catalog="tickets" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <foreign-key name="FK_78495ce308db49118fe8e1a0567" columns="journey_id" ref-table="journey" ref-schema="" ref-catalog="tickets" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_9dea05573cd14c61a458a8981ba" columns="passenger_id" ref-table="passenger" ref-schema="" ref-catalog="tickets" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
     </table>
     <table name="city" schema="" catalog="world" type="TABLE">
       <column name="ID" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
