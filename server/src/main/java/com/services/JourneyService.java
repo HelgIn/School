@@ -1,9 +1,10 @@
 package com.services;
 
 
-import com.entity.Journey;
+import entity.Journey;
 
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
 
 public class JourneyService {
     private EntityManager em;
@@ -16,5 +17,8 @@ public class JourneyService {
         em.getTransaction().begin();
         em.persist(journey);
         em.getTransaction().commit();
+    }
+    public Journey getByID(long id) {
+        return em.find(Journey.class, id);
     }
 }

@@ -1,12 +1,14 @@
 package com.dto;
 
-public class TicketInfo {
+import java.io.Serializable;
+
+public class TicketInfo implements Serializable{
     private String name;
     private String surname;
     private String date;
     private long journeyID;
 
-    TicketInfo(String name, String surname, String date, long journeyID) {
+    public TicketInfo(String name, String surname, String date, long journeyID) {
         this.name = name;
         this.surname = surname;
         this.date = date;
@@ -24,5 +26,10 @@ public class TicketInfo {
     }
     public String getDate() {
         return date;
+    }
+
+    @Override
+    public String toString() {
+        return "Ticket { " + getName() + ", " + getSurname() + ", " + getDate() + ", " + getJourneyID() + " }";
     }
 }

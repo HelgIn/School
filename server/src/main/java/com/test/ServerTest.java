@@ -1,10 +1,8 @@
 package com.test;
 
-import com.entity.*;
-import com.init.Init;
 import com.services.JourneyService;
-import com.services.PassengerService;
 import com.services.RouteService;
+import entity.Journey;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Persistence;

@@ -2,8 +2,13 @@
 package com.client;
 
 import com.dto.SearchInfo;
+import com.dto.SearchInfoAnswer;
+import com.dto.SearchInfoObject;
+import entity.Route;
 
 import javax.swing.*;
+import javax.swing.table.AbstractTableModel;
+import javax.swing.table.TableModel;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
@@ -13,6 +18,7 @@ public class TicketFrame extends javax.swing.JFrame {
 
 
     public TicketFrame(Socket client) {
+
         this.client = client;
         initComponents();
     }
@@ -34,7 +40,20 @@ public class TicketFrame extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     private void initComponents() {
 
+        tm = new javax.swing.table.DefaultTableModel(
+                new Object[][]{
+                        {null, null, null, null, null, null},
+
+                },
+                new String[]{
+                        "id", "From", "To", "Arrival", "Seats", "Time"
+                }
+        );
+
+
         SearchButton = new javax.swing.JButton();
+        BuyButton = new javax.swing.JButton();
+
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jComboFrom = new javax.swing.JComboBox();
@@ -53,6 +72,7 @@ public class TicketFrame extends javax.swing.JFrame {
             }
         });
 
+        BuyButton.setText("Buy");
 
 
         jLabel1.setText("From:");
@@ -68,15 +88,7 @@ public class TicketFrame extends javax.swing.JFrame {
 
         jComboTo.setModel(new javax.swing.DefaultComboBoxModel(new String[]{"Item 1", "Item 2", "Item 3", "Item 4"}));
 
-        jSearchTable.setModel(new javax.swing.table.DefaultTableModel(
-                new Object[][]{
-                        {null, null, null, null, null, null},
-
-                },
-                new String[]{
-                        "id", "From", "To", "Arrival", "Seats", "Time"
-                }
-        ));
+        jSearchTable.setModel(tm);
         jScrollPane1.setViewportView(jSearchTable);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -89,6 +101,8 @@ public class TicketFrame extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(0, 0, 0)
                         .addComponent(SearchButton)
+                        .addGap(0, 0, 0)
+                        .addComponent(BuyButton)
                         .addGap(0, 0, 0))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -116,6 +130,7 @@ public class TicketFrame extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
                 .addComponent(SearchButton)
+                .addComponent(BuyButton)
                 .addContainerGap())
         );
 
@@ -140,33 +155,44 @@ public class TicketFrame extends javax.swing.JFrame {
             SearchInfo searchInfo = new SearchInfo(from, to);
             // заполним таблицу
 
-            jSearchTable.setModel(new javax.swing.table.DefaultTableModel(
-                    new Object[][]{
-                            {1, from, to, "10:00", "500", "310"},
 
-                    },
-                    new String[]{
-                            "id", "From", "To", "Arrival", "Seats", "Time"
-                    }
-            ));
 
             try {
-//                DataOutputStream dataOut = new DataOutputStream(client.getOutputStream());
-//                ObjectOutputStream out = new ObjectOutputStream(dataOut);
-
                 out.writeObject(searchInfo);
-                out.flush();
             } catch (IOException e) {
-//                message = "Ошибка отправки данных";
-//                JOptionPane.showMessageDialog(new JFrame(), message, "Ошибка",
-//                        JOptionPane.ERROR_MESSAGE);
+                message = "Ошибка отправки данных";
+                JOptionPane.showMessageDialog(new JFrame(), message, "Ошибка",
+                        JOptionPane.ERROR_MESSAGE);
                 e.printStackTrace();
             }
 
         }
     }
 
-    private void ComboFromActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboFromActionPerformed
+
+
+    public void printSearchResults(SearchInfoAnswer sa) {
+
+        final int rows = sa.getSearchObj().size();
+
+//        final String[] colNames = {"Номер", "Маршрут", "Время отправки"};
+//
+
+        tm = new javax.swing.table.DefaultTableModel(rows, 3);
+        jSearchTable.setModel(tm);
+        int index = 0;
+        for(SearchInfoObject search : sa.getSearchObj()) {
+            jSearchTable.setValueAt(index+1, index, 0);
+            jSearchTable.setValueAt(search.getName(), index, 1);
+            jSearchTable.setValueAt(search.getArrivalTime(), index, 2);
+            index++;
+
+        }
+
+
+    }
+
+    private void ComboFromActionPerformed(java.awt.event.ActionEvent evt) {
     }
 
 
@@ -174,6 +200,8 @@ public class TicketFrame extends javax.swing.JFrame {
     private javax.swing.JComboBox jComboTo;
 
     private javax.swing.JButton SearchButton;
+    private javax.swing.JButton BuyButton;
+
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
@@ -181,4 +209,6 @@ public class TicketFrame extends javax.swing.JFrame {
 
     private Socket client;
     private ObjectOutputStream out;
+
+    private TableModel tm;
 }

@@ -1,11 +1,10 @@
 package com.init;
 
-import com.entity.Route;
-import com.entity.Schedule;
-import com.entity.Station;
+import entity.Route;
+import entity.Schedule;
+import entity.Station;
 
 import javax.persistence.EntityManager;
-import javax.persistence.Persistence;
 
 public class Init {
     public EntityManager em;

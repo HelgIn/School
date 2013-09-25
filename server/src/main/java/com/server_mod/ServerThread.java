@@ -2,8 +2,6 @@ package com.server_mod;
 
 import com.dto.SearchInfo;
 import com.dto.StartInfo;
-import com.dto.TicketInfo;
-import com.entity.Station;
 import com.services.SearchService;
 import com.services.StartService;
 
@@ -11,7 +9,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
 import java.io.*;
 import java.net.Socket;
-import java.util.List;
 
 public class ServerThread extends Thread {
 

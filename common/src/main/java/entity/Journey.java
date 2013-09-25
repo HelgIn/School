@@ -1,4 +1,4 @@
-package com.entity;
+package entity;
 
 import org.hibernate.annotations.GenericGenerator;
 
@@ -15,6 +15,10 @@ public class Journey {
 
     @Column(name="available_seats")
     private int availableSeats;
+
+    public Journey() {
+    }
+
     public void setAvailableSeats(int availableSeats) {
         this.availableSeats = availableSeats;
     }
@@ -38,5 +42,22 @@ public class Journey {
     }
     public void setRoute(Route id_route) {
         this.route = id_route;
+    }
+
+    public int getAvailableSeats() {
+        return availableSeats;
+    }
+
+    public String getArrivalTime() {
+        return arrivalTime;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    @Override
+    public String toString() {
+        return "Journey { " + getId() + ", " + getAvailableSeats() + ", " + getArrivalTime() + " }";
     }
 }

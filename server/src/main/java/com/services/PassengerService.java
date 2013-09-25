@@ -1,6 +1,6 @@
 package com.services;
 
-//import com.entity.Passenger;
+//import Passenger;
 
 import javax.persistence.*;
 

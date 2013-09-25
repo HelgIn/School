@@ -1,9 +1,6 @@
 package com.services;
 
 
-import com.entity.Route;
-import com.entity.Station;
-
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 import java.util.List;

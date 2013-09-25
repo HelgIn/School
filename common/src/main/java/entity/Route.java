@@ -1,12 +1,13 @@
-package com.entity;
+package entity;
 
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "Route")
-public class Route {
+public class Route implements Serializable {
 
     @Id
     @GeneratedValue(generator="increment")

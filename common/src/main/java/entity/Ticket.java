@@ -1,4 +1,4 @@
-package com.entity;
+package entity;
 
 
 import org.hibernate.annotations.GenericGenerator;
@@ -33,8 +33,5 @@ public class Ticket {
     public void setJourney(Journey id_journey) {
         this.journey = id_journey;
     }
-
-
-
 
 }

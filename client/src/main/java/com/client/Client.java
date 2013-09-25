@@ -1,7 +1,9 @@
 package com.client;
 
+import com.dto.SearchInfoAnswer;
 import com.dto.StartInfo;
 
+import javax.swing.*;
 import java.io.*;
 import java.net.Socket;
 
@@ -26,7 +28,7 @@ public class Client {
             outObj = new ObjectOutputStream(out);
             inObj = new ObjectInputStream(in);
 
-            TicketFrame wnd = new TicketFrame(outObj);
+            JFrame wnd = new JFrame(outObj);
 
             try {
                 StartInfo si  = (StartInfo) inObj.readObject();
@@ -34,39 +36,24 @@ public class Client {
                 wnd.getJComboTo().setModel(new javax.swing.DefaultComboBoxModel(si.getStations().toArray()));
                 wnd.setVisible(true);
 
+                while (true) {
+                    Object incomingObject = inObj.readObject();
+                    /*
+                     * пришёл ответ поиска
+                        */
+                    if (incomingObject instanceof SearchInfoAnswer){
+                        if(((SearchInfoAnswer) incomingObject).getSearchObj().size() > 0) {
+                            wnd.printSearchResults((SearchInfoAnswer) incomingObject);
+                        }
+                        else {
+                            JFrame.showError("Поезда не найдены");
+                        }
+                    }
+                }
+
             } catch (ClassNotFoundException e) {
                 System.out.println("Stations loading error");
             }
-
-            wnd.setVisible(true);
-
-            while (true) {
-
-            }
-
-
-
-//            client = new Socket("localhost", 8080);
-//
-//
-//            dataIn =  new DataInputStream(client.getInputStream());
-//            inObj = new ObjectInputStream(dataIn);
-//
-//            wnd = new TicketFrame(client);
-//            try {
-//                StartInfo si  = (StartInfo) inObj.readObject();
-//                wnd.getJComboFrom().setModel(new javax.swing.DefaultComboBoxModel(si.getStations().toArray()));
-//                wnd.getJComboTo().setModel(new javax.swing.DefaultComboBoxModel(si.getStations().toArray()));
-//                wnd.setVisible(true);
-//
-//            } catch (ClassNotFoundException e) {
-//                System.out.println("Stations loading error");
-//            }
-//
-//
-//            while (true) {
-//
-//            }
 
         } catch (IOException e) {
             e.printStackTrace();
