@@ -6,6 +6,7 @@ import entity.Journey;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
+import java.util.Date;
 
 
 public class ServerTest {
@@ -14,8 +15,8 @@ public class ServerTest {
 
         RouteService rs = new RouteService(em);
 
-        Journey redArr = new Journey(500, "10:00");
-        redArr.setRoute(rs.getRouteBiId(1));
+        Journey redArr = new Journey(500, new Date("10:00"));
+        //redArr.setRoute(rs.getRouteBiId(1));
 
         JourneyService js = new JourneyService(em);
         js.addJourney(redArr);

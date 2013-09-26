@@ -1,29 +1,19 @@
 package com.dto;
 
-import entity.Ticket;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
-public class TicketInfo implements Serializable{
+public class BuyTicketObject implements Serializable {
     private String name;
     private String surname;
     private String date;
     private long journeyID;
 
-    List<BuyTicketObject> ticketList;
 
 
-    public TicketInfo() {
-        ticketList = new ArrayList<BuyTicketObject>();
-    }
 
-    public List<BuyTicketObject> getTicketList() {
-        return ticketList;
-    }
 
-    public TicketInfo(String name, String surname, String date, long journeyID) {
+    public BuyTicketObject(String name, String surname, String date, long journeyID) {
         this.name = name;
         this.surname = surname;
         this.date = date;

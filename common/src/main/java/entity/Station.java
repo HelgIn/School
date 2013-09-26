@@ -42,7 +42,7 @@ public class Station {
 
     @Override
     public String toString() {
-        return getName();
+        return getId() + ", " + getName();
     }
 }
 

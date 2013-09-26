@@ -14,11 +14,11 @@ public class RouteService {
         this.em = em;
     }
 
-    public Route getRouteBiId(long id) {
-        em.getTransaction().begin();
-        TypedQuery<Route> query = em.createQuery("FROM Route", Route.class);
-        List<Route> ret = query.getResultList();
-        em.getTransaction().commit();
-        return ret.get(0);
-    }
+//    public Route getRouteBiId(long id) {
+//        em.getTransaction().begin();
+//        TypedQuery<Route> query = em.createQuery("FROM Route", Route.class);
+//        List<Route> ret = query.getResultList();
+//        em.getTransaction().commit();
+//        return ret.get(0);
+//    }
 }

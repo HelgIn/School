@@ -1,17 +1,16 @@
 package com.server_mod;
 
-import com.dto.SearchInfo;
-import com.dto.StartInfo;
-import com.dto.TicketInfo;
-import com.services.SearchService;
-import com.services.StartService;
-import com.services.TicketService;
+import com.dto.*;
+import com.services.*;
+import entity.Schedule;
 
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.Persistence;
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.List;
 
 
 public class OneServer {
@@ -48,15 +47,48 @@ public class OneServer {
                  */
                 if (incomingObject instanceof SearchInfo){
                     SearchService searchService = new SearchService((SearchInfo) incomingObject, em);
-                    outObj.writeObject(searchService.search());
+                    try {
+                        outObj.writeObject(searchService.search());
+                    } catch (NoResultException e) {
+                        outObj.writeObject(e);
+                    }
                 }
                 /*
                  * пришёл запрос на билет
                  */
                 else if (incomingObject instanceof TicketInfo){
                     TicketService ticketService = new TicketService((TicketInfo) incomingObject, em);
-                    ticketService.addTicket();
-                    //outObj.writeObject(ticketService.addTicket());
+                    outObj.writeObject(ticketService.addTicket());
+                }
+
+                /*
+                 * пришёл запрос поиск по станции
+                 */
+                else if (incomingObject instanceof StationInfo){
+                    StationService stationService = new StationService((StationInfo) incomingObject, em);
+                    try {
+                        outObj.writeObject(stationService.search());
+                    } catch (NoResultException e) {
+                        outObj.writeObject(e);
+                    }
+
+                }
+
+                /*
+                 * пришёл запрос добавление станции
+                 */
+                else if (incomingObject instanceof AddStationInfo){
+                    AddStationService addStationService = new AddStationService((AddStationInfo) incomingObject, em);
+                    addStationService.add();
+
+                }
+
+                /*
+                 * пришёл запрос добавление маршрута
+                 */
+                else if (incomingObject instanceof AddRouteInfo){
+                    AddRouteService addRouteService = new AddRouteService((AddRouteInfo) incomingObject, em);
+                    addRouteService.add();
                 }
 
             }

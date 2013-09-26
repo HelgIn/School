@@ -1,6 +1,7 @@
 package com.services;
 
 
+import com.dto.BuyTicketObject;
 import com.dto.SearchInfo;
 import com.dto.TicketInfo;
 import entity.Journey;
@@ -18,17 +19,20 @@ public class TicketService {
         this.ticketInfo = ticketInfo;
     }
 
-    public boolean addTicket() {
+    public Boolean addTicket() {
         em.getTransaction().begin();
 
-        Passenger passenger = new Passenger(ticketInfo.getName(), ticketInfo.getSurname(), ticketInfo.getDate());
-        em.persist(passenger);
+        for(BuyTicketObject to : ticketInfo.getTicketList())  {
 
-        Ticket ticket = new Ticket();
-        ticket.setPassenger(passenger);
-        JourneyService journey = new JourneyService(em);
-        ticket.setJourney(journey.getByID(ticketInfo.getJourneyID()));
-        em.persist(ticket);
+            Passenger passenger = new Passenger(to.getName(), to.getSurname(), to.getDate());
+            em.persist(passenger);
+
+            Ticket ticket = new Ticket();
+            ticket.setPassenger(passenger);
+            JourneyService journey = new JourneyService(em);
+            ticket.setJourney(journey.getByID(to.getJourneyID()));
+            em.persist(ticket);
+        }
         em.getTransaction().commit();
         return true;
     }

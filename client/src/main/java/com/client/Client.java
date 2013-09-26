@@ -1,11 +1,14 @@
 package com.client;
 
+import com.dto.SearchInfo;
 import com.dto.SearchInfoAnswer;
 import com.dto.StartInfo;
+import com.dto.StationAnswer;
 
 import javax.swing.*;
 import java.io.*;
 import java.net.Socket;
+import java.util.Scanner;
 
 public class Client {
     private Socket client;
@@ -14,8 +17,41 @@ public class Client {
     private ObjectOutputStream outObj;
     private ObjectInputStream inObj;
 
-    Client() {
+    Scanner scanner;
 
+
+    public void start() {
+        System.out.println("Client start");
+        System.out.println("Выберете действие");
+        System.out.println("1. Найти ппоезд");
+        System.out.println("2. Посмотреть расписание станции");
+        System.out.println("3. Добавить станцию");
+    }
+
+    public void findTrain(ObjectOutputStream outObj) {
+        System.out.println("Станция отправления:");
+        String from = scanner.nextLine();
+        System.out.println("Станция назначения:");
+        String to = scanner.nextLine();
+
+        System.out.println(from);
+        System.out.println(to);
+
+        if(!from.equals("") && !to.equals("")) {
+
+            SearchInfo searchInfo = new SearchInfo(from, to);
+            try {
+                outObj.writeObject(searchInfo);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+    }
+
+    public Client() {
+
+        scanner = new Scanner(System.in);
 
         try {
 
@@ -28,32 +64,68 @@ public class Client {
             outObj = new ObjectOutputStream(out);
             inObj = new ObjectInputStream(in);
 
-            JFrame wnd = new JFrame(outObj);
 
-            try {
-                StartInfo si  = (StartInfo) inObj.readObject();
-                wnd.getJComboFrom().setModel(new javax.swing.DefaultComboBoxModel(si.getStations().toArray()));
-                wnd.getJComboTo().setModel(new javax.swing.DefaultComboBoxModel(si.getStations().toArray()));
-                wnd.setVisible(true);
+//            }
 
-                while (true) {
-                    Object incomingObject = inObj.readObject();
-                    /*
-                     * пришёл ответ поиска
-                        */
-                    if (incomingObject instanceof SearchInfoAnswer){
-                        if(((SearchInfoAnswer) incomingObject).getSearchObj().size() > 0) {
-                            wnd.printSearchResults((SearchInfoAnswer) incomingObject);
-                        }
-                        else {
-                            JFrame.showError("Поезда не найдены");
-                        }
-                    }
-                }
+//            switch (choose) {
+//                case 1:
+//                    System.out.println("Выбрано " + choose);
+//
+//                    System.out.println("Станция отправления:");
+//                    String from = scanner.nextLine();
+//                    System.out.println("Станция назначения:");
+//                    String to = scanner.nextLine();
+//
+//                    System.out.println(from);
+//                    System.out.println(to);
+//
+//                    if(!from.equals("") && !to.equals("")) {
+//
+//                        SearchInfo searchInfo = new SearchInfo(from, to);
+//                        try {
+//                            outObj.writeObject(searchInfo);
+//                        } catch (IOException e) {
+//                            e.printStackTrace();
+//                        }
+//                    }
+//
+////                    findTrain(outObj);
+//                    break;
+//
+//                case 2:  System.out.println("Выбрано " + choose); break;
+//                case 3:  System.out.println("Выбрано " + choose); break;
+//                default: start(); break;
+//            }
 
-            } catch (ClassNotFoundException e) {
-                System.out.println("Stations loading error");
-            }
+
+
+
+            //JFrame wnd = new JFrame(outObj);
+
+//            try {
+//                StartInfo si  = (StartInfo) inObj.readObject();
+//                wnd.getJComboFrom().setModel(new javax.swing.DefaultComboBoxModel(si.getStations().toArray()));
+//                wnd.getJComboTo().setModel(new javax.swing.DefaultComboBoxModel(si.getStations().toArray()));
+//                wnd.setVisible(true);
+//
+//                while (true) {
+//                    Object incomingObject = inObj.readObject();
+//                    /*
+//                     * пришёл ответ поиска
+//                        */
+//                    if (incomingObject instanceof SearchInfoAnswer){
+//                        if(((SearchInfoAnswer) incomingObject).getSearchObj().size() > 0) {
+//                            wnd.printSearchResults((SearchInfoAnswer) incomingObject);
+//                        }
+//                        else {
+//                            JFrame.showError("Поезда не найдены");
+//                        }
+//                    }
+//                }
+//
+//            } catch (ClassNotFoundException e) {
+//                System.out.println("Stations loading error");
+//            }
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -67,9 +139,76 @@ public class Client {
     }
 
 
+    public void startClient() throws IOException, ClassNotFoundException {
+        System.out.println("Client start");
+        System.out.println("Выберете действие");
+        System.out.println("1. Найти ппоезд");
+        System.out.println("2. Посмотреть расписание станции");
+        System.out.println("3. Добавить станцию");
 
-    public static void main(String [] args) {
-        Client cl = new Client();
+        int choose = scanner.nextInt();
+
+
+        System.out.println("Станция отправления:");
+        String from = scanner.nextLine();
+        System.out.println("Станция назначения:");
+        String to = scanner.nextLine();
+
+        System.out.println(from);
+        System.out.println(to);
+
+        if(!from.equals("") && !to.equals("")) {
+
+            SearchInfo searchInfo = new SearchInfo(from, to);
+            try {
+                outObj.writeObject(searchInfo);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+
+        while (true) {
+            Object incomingObject = inObj.readObject();
+
+            System.out.println(incomingObject);
+            /*
+             * пришёл ответ станции
+             */
+            if (incomingObject instanceof StationAnswer){
+                System.out.println("here");
+                if(((StationAnswer) incomingObject).getRoutes().size() > 0) {
+                    System.out.println(incomingObject);
+                }
+                else {
+                    System.out.println("Не найдено, повторите поиск");
+                    start();
+                }
+            }
+
+            /*
+             * пришёл ответ поиска
+             */
+            if (incomingObject instanceof SearchInfoAnswer){
+                if(((SearchInfoAnswer) incomingObject).getSearchObj().size() > 0) {
+                    System.out.println(incomingObject);
+                }
+                else {
+                    System.out.println("Не найдено, повторите поиск");
+                    start();
+                }
+            }
+
+        }
+
+    }
+
+
+    public static void main(String [] args) throws IOException, ClassNotFoundException {
+
+        ConsoleClient cc = new ConsoleClient();
+        cc.startClient();
+
     }
 }
 

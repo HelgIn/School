@@ -2,14 +2,16 @@ package com.dto;
 
 
 import java.io.Serializable;
+import java.util.Date;
 
 public class SearchInfoObject implements Serializable{
     long id;
     private String name;
-    private String arrivalTime;
+    private Date arrivalTime;
     public int availableSeats;
 
-    public SearchInfoObject(long id, String name, String arrivalTime, int availableSeats) {
+
+    public SearchInfoObject(long id, String name, Date arrivalTime, int availableSeats) {
         this.id = id;
         this.name = name;
         this.arrivalTime = arrivalTime;
@@ -20,7 +22,7 @@ public class SearchInfoObject implements Serializable{
         return name;
     }
 
-    public String getArrivalTime() {
+    public Date getArrivalTime() {
         return arrivalTime;
     }
 

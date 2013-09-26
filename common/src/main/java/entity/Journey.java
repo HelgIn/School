@@ -3,6 +3,7 @@ package entity;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(name="Journey")
@@ -24,12 +25,12 @@ public class Journey {
     }
 
     @Column(name="arrival_time")
-    private String arrivalTime;
-    public void setArrivalTime(String arrivalTime) {
+    private Date arrivalTime;
+    public void setArrivalTime(Date arrivalTime) {
         this.arrivalTime = arrivalTime;
     }
 
-    public Journey(int availableSeats, String arrivalTime) {
+    public Journey(int availableSeats, Date arrivalTime) {
         this.availableSeats = availableSeats;
         this.arrivalTime = arrivalTime;
     }
@@ -48,7 +49,7 @@ public class Journey {
         return availableSeats;
     }
 
-    public String getArrivalTime() {
+    public Date getArrivalTime() {
         return arrivalTime;
     }
 
