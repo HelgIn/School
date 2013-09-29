@@ -6,6 +6,8 @@ import entity.Route;
 import entity.Station;
 
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
+import java.math.BigInteger;
 
 
 public class AddRouteService {
@@ -19,10 +21,28 @@ public class AddRouteService {
 
     }
 
-    public void add() {
+    public AddRouteInfo add() {
         em.getTransaction().begin();
-        Route route = new Route(addRouteInfo.getName());
-        em.persist(route);
+        if(checkName()) {
+            Route route = new Route(addRouteInfo.getName());
+            em.persist(route);
+            addRouteInfo.setMessage("Маршрут " + addRouteInfo.getName() + " добавлен");
+        } else {
+            addRouteInfo.setMessage("Маршрут " + addRouteInfo.getName() + " уже существует");
+
+        }
         em.getTransaction().commit();
+        return addRouteInfo;
+    }
+
+
+    private boolean checkName() {
+        Query check = em.createNativeQuery("select count(id) from route where name = :name");
+        check.setParameter("name", addRouteInfo.getName());
+        Integer count = ((BigInteger)check.getSingleResult()).intValue();
+        if(count > 0) {
+            return false;
+        }
+        return true;
     }
 }

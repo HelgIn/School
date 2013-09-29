@@ -39,4 +39,14 @@ public class Route implements Serializable {
 
         return this.getId() + ": " + this.getName();
     }
+
+    @Transient
+    private long timeToStation;
+
+    public long getTimeToStation() {
+        return timeToStation;
+    }
+    public void setTimeToStation(long timeToStation) {
+        this.timeToStation = timeToStation;
+    }
 }

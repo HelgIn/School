@@ -9,7 +9,21 @@ public class SearchInfo implements Serializable {
     private String from;
     private String to;
 
+    private long fromTime;
+    private long toTime;
 
+    public void setTimes(long fromTime, long toTime) {
+        this.fromTime = fromTime;
+        this.toTime = toTime;
+    }
+
+    public long getFromTime() {
+        return fromTime;
+    }
+
+    public long getToTime() {
+        return toTime;
+    }
     public SearchInfo(String from, String to) {
         this.from = from;
         this.to = to;

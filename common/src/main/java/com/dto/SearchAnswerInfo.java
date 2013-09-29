@@ -1,20 +1,20 @@
 package com.dto;
 
-import entity.Route;
+import objects.SearchInfoObject;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 
-public class SearchInfoAnswer  implements Serializable {
+public class SearchAnswerInfo implements Serializable {
     private List<SearchInfoObject> searchObj;
 
-    public SearchInfoAnswer() {
+    public SearchAnswerInfo() {
         searchObj = new ArrayList<SearchInfoObject>();
     }
 
-    public SearchInfoAnswer(List<SearchInfoObject> searchObj) {
+    public SearchAnswerInfo(List<SearchInfoObject> searchObj) {
         this.searchObj = searchObj;
     }
 
@@ -50,4 +50,6 @@ public class SearchInfoAnswer  implements Serializable {
         }
         return res;
     }
+
+
 }

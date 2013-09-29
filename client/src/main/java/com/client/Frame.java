@@ -1,6 +1,6 @@
 package com.client;
 
-import listeners.Search;
+//import listeners.Search;
 
 import javax.swing.*;
 import java.io.ObjectOutputStream;
@@ -32,7 +32,7 @@ class Frame extends JFrame {
 
         this.setTitle("Tickets");
 
-        getJButton().addActionListener(new Search(this));
+//        getJButton().addActionListener(new Search(this));
 
     }
 

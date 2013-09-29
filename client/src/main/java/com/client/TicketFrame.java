@@ -1,15 +1,13 @@
 
 package com.client;
 
+import com.dto.SearchAnswerInfo;
 import com.dto.SearchInfo;
-import com.dto.SearchInfoAnswer;
-import com.dto.SearchInfoObject;
-import entity.Route;
+import com.dto.SearchAnswerInfo;
+import objects.SearchInfoObject;
 
 import javax.swing.*;
-import javax.swing.table.AbstractTableModel;
 import javax.swing.table.TableModel;
-import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
@@ -171,7 +169,7 @@ public class TicketFrame extends javax.swing.JFrame {
 
 
 
-    public void printSearchResults(SearchInfoAnswer sa) {
+    public void printSearchResults(SearchAnswerInfo sa) {
 
         final int rows = sa.getSearchObj().size();
 

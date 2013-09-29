@@ -1,9 +1,10 @@
 package com.services;
 
 
+import com.dto.SearchAnswerInfo;
 import com.dto.SearchInfo;
-import com.dto.SearchInfoAnswer;
-import com.dto.SearchInfoObject;
+import com.dto.SearchAnswerInfo;
+import objects.SearchInfoObject;
 import entity.Journey;
 import entity.Route;
 
@@ -13,20 +14,22 @@ import javax.persistence.TypedQuery;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 
 public class SearchService {
     private EntityManager em;
-    SearchInfo searchInfo;
+    private SearchInfo searchInfo;
+
+    private static Logger log = Logger.getLogger(SearchService.class.getName());
 
     public SearchService(SearchInfo searchInfo, EntityManager em) {
         this.em = em;
         this.searchInfo = searchInfo;
-
-
     }
-    public SearchInfoAnswer search() {
+
+    public SearchAnswerInfo search() {
         em.getTransaction().begin();
-        SearchInfoAnswer sa = null;
+        SearchAnswerInfo sa = null;
         try {
             // get station's id's
             TypedQuery<Long> queryFrom = em.createQuery("SELECT s.id FROM Station s WHERE name = '" + searchInfo.getFrom() + "'", Long.class);
@@ -44,7 +47,7 @@ public class SearchService {
 
             List<Journey> journeys = getJourney(results);
 
-            sa = new SearchInfoAnswer();
+            sa = new SearchAnswerInfo();
 
             List<Long> routeIds = new ArrayList<Long>();
             for(int i=0; i<journeys.size(); i++) {
@@ -62,10 +65,7 @@ public class SearchService {
             em.getTransaction().commit();
         }
         return sa;
-
     }
-
-
 
     public List<Journey> getJourney(List<Route> route) {
 
@@ -74,10 +74,12 @@ public class SearchService {
             ids.add(i,  route.get(i).getId());
         }
 
-        Query query = em.createNativeQuery("SELECT * FROM Journey WHERE route_id IN (:ids)  order by Journey.route_id asc", Journey.class);
+        log.info(String.valueOf(searchInfo.getFromTime()));
+
+        Query query = em.createNativeQuery("SELECT * FROM Journey WHERE route_id IN (:ids) and time(arrival_time) > :for and time(arrival_time) < :to order by Journey.route_id asc", Journey.class);
         query.setParameter("ids", ids);
-
-
+        query.setParameter("for", searchInfo.getFromTime());
+        query.setParameter("to", searchInfo.getToTime());
 
         List<Journey> results = query.getResultList();
         for(Journey res : results) {
@@ -92,5 +94,9 @@ public class SearchService {
         Integer result = ((BigInteger) query.getSingleResult()).intValue();
         return  result;
     }
+
+
+
+
 
 }

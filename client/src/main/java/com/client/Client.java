@@ -1,11 +1,9 @@
 package com.client;
 
+import com.dto.SearchAnswerInfo;
 import com.dto.SearchInfo;
-import com.dto.SearchInfoAnswer;
-import com.dto.StartInfo;
-import com.dto.StationAnswer;
+import objects.StationAnswerObject;
 
-import javax.swing.*;
 import java.io.*;
 import java.net.Socket;
 import java.util.Scanner;
@@ -113,9 +111,9 @@ public class Client {
 //                    /*
 //                     * пришёл ответ поиска
 //                        */
-//                    if (incomingObject instanceof SearchInfoAnswer){
-//                        if(((SearchInfoAnswer) incomingObject).getSearchObj().size() > 0) {
-//                            wnd.printSearchResults((SearchInfoAnswer) incomingObject);
+//                    if (incomingObject instanceof SearchAnswerInfo){
+//                        if(((SearchAnswerInfo) incomingObject).getSearchObj().size() > 0) {
+//                            wnd.printSearchResults((SearchAnswerInfo) incomingObject);
 //                        }
 //                        else {
 //                            JFrame.showError("Поезда не найдены");
@@ -175,9 +173,9 @@ public class Client {
             /*
              * пришёл ответ станции
              */
-            if (incomingObject instanceof StationAnswer){
+            if (incomingObject instanceof StationAnswerObject){
                 System.out.println("here");
-                if(((StationAnswer) incomingObject).getRoutes().size() > 0) {
+                if(((StationAnswerObject) incomingObject).getRoutes().size() > 0) {
                     System.out.println(incomingObject);
                 }
                 else {
@@ -189,8 +187,8 @@ public class Client {
             /*
              * пришёл ответ поиска
              */
-            if (incomingObject instanceof SearchInfoAnswer){
-                if(((SearchInfoAnswer) incomingObject).getSearchObj().size() > 0) {
+            if (incomingObject instanceof SearchAnswerInfo){
+                if(((SearchAnswerInfo) incomingObject).getSearchObj().size() > 0) {
                     System.out.println(incomingObject);
                 }
                 else {
