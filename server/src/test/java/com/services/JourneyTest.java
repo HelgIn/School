@@ -8,6 +8,7 @@ import entity.Journey;
 import org.junit.Test;
 
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.Persistence;
 
 public class JourneyTest {
@@ -22,7 +23,7 @@ public class JourneyTest {
 
     }
 
-    @Test
+    @Test(expected = NoResultException.class)
     public void passNegativeTest() {
         JourneyInfo journeyInfo = new JourneyInfo(50);
         JourneyService journeyService = new JourneyService(journeyInfo, em);

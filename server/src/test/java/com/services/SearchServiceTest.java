@@ -26,6 +26,7 @@ public class SearchServiceTest {
     @Test
     public void searchTest() {
         searchInfo = new SearchInfo("Санкт-Петербург", "Москва");
+        searchInfo.setTimes(140000, 180000);
         em = Persistence.createEntityManagerFactory("SCHOOL").createEntityManager();
         searchService = new SearchService(searchInfo, em);
         assert(searchService.search().getSearchObj().get(0).getName().equals("Красная Стрела из СПб"));

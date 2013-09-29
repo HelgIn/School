@@ -46,17 +46,17 @@ public class TicketTest {
         assert(result == false);
     }
 
-    @Test
-    public void getTest() throws ParseException {
-        Calendar date = new GregorianCalendar();
-        ticketInfo = new TicketInfo();
-        date.setTime(new SimpleDateFormat("dd-MM-yyyy").parse("29-05-1988"));
-        ticketInfo.addObject(new BuyTicketObject("asd", "wqe", date, 1));
-        ticketInfo.addObject(new BuyTicketObject("N", "L", date, 1));
-
-        TicketService ticketService = new TicketService(ticketInfo, em);
-        int result = ticketService.getSeats(1);
-        assert(result == 491);
-    }
+//    @Test
+//    public void getTest() throws ParseException {
+//        Calendar date = new GregorianCalendar();
+//        ticketInfo = new TicketInfo();
+//        date.setTime(new SimpleDateFormat("dd-MM-yyyy").parse("29-05-1988"));
+//        ticketInfo.addObject(new BuyTicketObject("asd", "wqe", date, 1));
+//        ticketInfo.addObject(new BuyTicketObject("N", "L", date, 1));
+//
+//        TicketService ticketService = new TicketService(ticketInfo, em);
+//        int result = ticketService.getSeats(1);
+//        assert(result == 491);
+//    }
 
 }

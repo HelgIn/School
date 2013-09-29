@@ -57,10 +57,6 @@ public class SearchService {
                 }
 
             }
-
-            for(Route res : results) {
-                System.out.println(res.getName());
-            }
         } finally {
             em.getTransaction().commit();
         }

@@ -2,52 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ce704bf0-98c2-4a0d-af43-1b04784abef3" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/common/src/main/java/com/dto/AddJourneyInfo.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/src/main/java/com/services/AddJourneyService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/common/src/main/java/com/dto/AuthInfo.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/src/main/java/com/services/AuthService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/src/test/java/com/services/AuthTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/common/src/main/java/com/dto/ExceptionInfo.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/common/src/main/java/objects/GetJourneyObject.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/common/src/main/java/com/dto/GetJourneysInfo.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/src/main/java/com/services/GetJourneysService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/common/src/main/java/com/dto/JourneyInfo.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/src/test/java/com/services/JourneyTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/src/test/java/com/services/SearchServiceTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/src/test/java/com/services/StationServiceTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/src/test/java/com/services/TicketTest.java" />
-      <change type="DELETED" beforePath="D:\tr\client\src\main\java\listeners\Search.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/.project" afterPath="$PROJECT_DIR$/client/.project" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/common/.project" afterPath="$PROJECT_DIR$/common/.project" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/.project" afterPath="$PROJECT_DIR$/server/.project" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/common/src/main/java/com/dto/AddRouteInfo.java" afterPath="$PROJECT_DIR$/common/src/main/java/com/dto/AddRouteInfo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/main/java/com/services/AddRouteService.java" afterPath="$PROJECT_DIR$/server/src/main/java/com/services/AddRouteService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/common/src/main/java/com/dto/AddStationInfo.java" afterPath="$PROJECT_DIR$/common/src/main/java/com/dto/AddStationInfo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/main/java/com/services/AddStationService.java" afterPath="$PROJECT_DIR$/server/src/main/java/com/services/AddStationService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/main/java/com/client/Client.java" afterPath="$PROJECT_DIR$/client/src/main/java/com/client/Client.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/main/java/com/client/ConsoleClient.java" afterPath="$PROJECT_DIR$/client/src/main/java/com/client/ConsoleClient.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/main/java/com/client/Frame.java" afterPath="$PROJECT_DIR$/client/src/main/java/com/client/Frame.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/main/java/com/client/JFrame.java" afterPath="$PROJECT_DIR$/client/src/main/java/com/client/JFrame.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/common/src/main/java/entity/Journey.java" afterPath="$PROJECT_DIR$/common/src/main/java/entity/Journey.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/main/java/com/services/JourneyService.java" afterPath="$PROJECT_DIR$/server/src/main/java/com/services/JourneyService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/main/java/com/server_mod/OneServer.java" afterPath="$PROJECT_DIR$/server/src/main/java/com/server_mod/OneServer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/common/src/main/java/entity/Passenger.java" afterPath="$PROJECT_DIR$/common/src/main/java/entity/Passenger.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/common/src/main/java/entity/Route.java" afterPath="$PROJECT_DIR$/common/src/main/java/entity/Route.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/main/java/com/services/RouteService.java" afterPath="$PROJECT_DIR$/server/src/main/java/com/services/RouteService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/common/src/main/java/com/dto/SearchInfo.java" afterPath="$PROJECT_DIR$/common/src/main/java/com/dto/SearchInfo.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/test/java/com/services/JourneyTest.java" afterPath="$PROJECT_DIR$/server/src/test/java/com/services/JourneyTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/main/java/com/services/SearchService.java" afterPath="$PROJECT_DIR$/server/src/main/java/com/services/SearchService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/main/java/com/test/ServerTest.java" afterPath="$PROJECT_DIR$/server/src/main/java/com/test/ServerTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/test/java/com/services/SearchServiceTest.java" afterPath="$PROJECT_DIR$/server/src/test/java/com/services/SearchServiceTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/common/src/main/java/com/dto/StationInfo.java" afterPath="$PROJECT_DIR$/common/src/main/java/com/dto/StationInfo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/main/java/com/services/StationService.java" afterPath="$PROJECT_DIR$/server/src/main/java/com/services/StationService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/main/java/com/client/TicketFrame.java" afterPath="$PROJECT_DIR$/client/src/main/java/com/client/TicketFrame.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/common/src/main/java/com/dto/TicketInfo.java" afterPath="$PROJECT_DIR$/common/src/main/java/com/dto/TicketInfo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/main/java/com/services/TicketService.java" afterPath="$PROJECT_DIR$/server/src/main/java/com/services/TicketService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/server.iml" afterPath="$PROJECT_DIR$/server/server.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="D:\tr\common\src\main\java\com\dto\BuyTicketObject.java" afterPath="$PROJECT_DIR$/common/src/main/java/objects/BuyTicketObject.java" />
-      <change type="MOVED" beforePath="D:\tr\common\src\main\java\com\dto\SearchInfoAnswer.java" afterPath="$PROJECT_DIR$/common/src/main/java/com/dto/SearchAnswerInfo.java" />
-      <change type="MOVED" beforePath="D:\tr\common\src\main\java\com\dto\SearchInfoObject.java" afterPath="$PROJECT_DIR$/common/src/main/java/objects/SearchInfoObject.java" />
-      <change type="MOVED" beforePath="D:\tr\common\src\main\java\com\dto\StationAnswer.java" afterPath="$PROJECT_DIR$/common/src/main/java/objects/StationAnswerObject.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/test/java/com/services/TicketTest.java" afterPath="$PROJECT_DIR$/server/src/test/java/com/services/TicketTest.java" />
     </list>
     <ignored path="ticket.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -92,7 +51,7 @@
     <file path="D:/untitled3/src/Main.java" changelist="ce704bf0-98c2-4a0d-af43-1b04784abef3" time="1380138243388" ignored="false" />
     <file path="/Main.java" changelist="ce704bf0-98c2-4a0d-af43-1b04784abef3" time="1380318792868" ignored="false" />
     <file path="/ConsoleClient.java" changelist="ce704bf0-98c2-4a0d-af43-1b04784abef3" time="1380482830432" ignored="false" />
-    <file path="/StationInfo.java" changelist="ce704bf0-98c2-4a0d-af43-1b04784abef3" time="1380482772508" ignored="false" />
+    <file path="/StationInfo.java" changelist="ce704bf0-98c2-4a0d-af43-1b04784abef3" time="1380486702608" ignored="false" />
     <file path="/StationService.java" changelist="ce704bf0-98c2-4a0d-af43-1b04784abef3" time="1380482585005" ignored="false" />
     <file path="/StationAnswer.java" changelist="ce704bf0-98c2-4a0d-af43-1b04784abef3" time="1380142405995" ignored="false" />
     <file path="/AddStationInfo.java" changelist="ce704bf0-98c2-4a0d-af43-1b04784abef3" time="1380406035334" ignored="false" />
@@ -101,7 +60,7 @@
     <file path="D:/untitled4/src/Main.java" changelist="ce704bf0-98c2-4a0d-af43-1b04784abef3" time="1380151404844" ignored="false" />
     <file path="/AddRouteService.java" changelist="ce704bf0-98c2-4a0d-af43-1b04784abef3" time="1380405523466" ignored="false" />
     <file path="/AddRouteInfo.java" changelist="ce704bf0-98c2-4a0d-af43-1b04784abef3" time="1380405458130" ignored="false" />
-    <file path="/SearchServiceTest.java" changelist="ce704bf0-98c2-4a0d-af43-1b04784abef3" time="1380280184254" ignored="false" />
+    <file path="/SearchServiceTest.java" changelist="ce704bf0-98c2-4a0d-af43-1b04784abef3" time="1380486382667" ignored="false" />
     <file path="/StationServiceTest.java" changelist="ce704bf0-98c2-4a0d-af43-1b04784abef3" time="1380481932994" ignored="false" />
     <file path="D:/untitled6/src/main/java/Main.java" changelist="ce704bf0-98c2-4a0d-af43-1b04784abef3" time="1380318794081" ignored="false" />
     <file path="D:/untitled6/.idea/workspace.xml" changelist="ce704bf0-98c2-4a0d-af43-1b04784abef3" time="1380241692870" ignored="false" />
@@ -123,7 +82,7 @@
     <file path="D:/untitled8/.idea/workspace.xml" changelist="ce704bf0-98c2-4a0d-af43-1b04784abef3" time="1380285945748" ignored="false" />
     <file path="D:/untitled7/.idea/workspace.xml" changelist="ce704bf0-98c2-4a0d-af43-1b04784abef3" time="1380318670937" ignored="false" />
     <file path="D:/untitled7/.idea/modules.xml" changelist="ce704bf0-98c2-4a0d-af43-1b04784abef3" time="1380318670937" ignored="false" />
-    <file path="/JourneyTest.java" changelist="ce704bf0-98c2-4a0d-af43-1b04784abef3" time="1380401804629" ignored="false" />
+    <file path="/JourneyTest.java" changelist="ce704bf0-98c2-4a0d-af43-1b04784abef3" time="1380486325104" ignored="false" />
     <file path="/JourneyInfo.java" changelist="ce704bf0-98c2-4a0d-af43-1b04784abef3" time="1380410025267" ignored="false" />
     <file path="/AddJourneyInfo.java" changelist="ce704bf0-98c2-4a0d-af43-1b04784abef3" time="1380479569459" ignored="false" />
     <file path="/AddJourneyService.java" changelist="ce704bf0-98c2-4a0d-af43-1b04784abef3" time="1380479555168" ignored="false" />
@@ -192,10 +151,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="OneServer.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/src/main/java/com/server_mod/OneServer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="58" column="60" selection-start="1954" selection-end="1954" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="SearchService.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/src/main/java/com/services/SearchService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="64" column="0" selection-start="2489" selection-end="2489" vertical-scroll-proportion="0.0">
+            <state line="58" column="13" selection-start="2363" selection-end="2363" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#1949#1955#0" expanded="true" />
               </folding>
@@ -203,19 +171,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StationService.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/src/main/java/com/services/StationService.java">
+      <file leaf-file-name="ConsoleClient.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/main/java/com/client/ConsoleClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="77" column="37" selection-start="3095" selection-end="3095" vertical-scroll-proportion="-14.518518">
+            <state line="450" column="71" selection-start="14233" selection-end="14233" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StationInfo.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="SearchInfo.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/common/src/main/java/com/dto/SearchInfo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="5" column="13" selection-start="62" selection-end="62" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StationInfo.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/common/src/main/java/com/dto/StationInfo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="45" selection-start="818" selection-end="818" vertical-scroll-proportion="0.0">
+            <state line="39" column="71" selection-start="960" selection-end="960" vertical-scroll-proportion="1.014658">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -223,28 +200,46 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AddJourneyInfo.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/common/src/main/java/com/dto/AddJourneyInfo.java">
+      <file leaf-file-name="StartService.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/src/main/java/com/services/StartService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="82" selection-start="396" selection-end="396" vertical-scroll-proportion="0.0">
+            <state line="7" column="13" selection-start="138" selection-end="138" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OneServer.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/src/main/java/com/server_mod/OneServer.java">
+      <file leaf-file-name="StationService.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/src/main/java/com/services/StationService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="57" column="94" selection-start="1893" selection-end="1893" vertical-scroll-proportion="0.0">
+            <state line="77" column="37" selection-start="3095" selection-end="3095" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ConsoleClient.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/client/src/main/java/com/client/ConsoleClient.java">
+      <file leaf-file-name="StationAnswerObject.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/common/src/main/java/objects/StationAnswerObject.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="183" column="11" selection-start="5572" selection-end="5572" vertical-scroll-proportion="0.22919936">
+            <state line="8" column="13" selection-start="107" selection-end="107" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JourneyTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/src/test/java/com/services/JourneyTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="25" column="51" selection-start="665" selection-end="665" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SearchServiceTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/src/test/java/com/services/SearchServiceTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="30" column="41" selection-start="922" selection-end="935" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -268,22 +263,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/server/src/main/java/com/services/TicketService.java" />
-        <option value="$PROJECT_DIR$/common/src/main/java/objects/BuyTicketObject.java" />
         <option value="$PROJECT_DIR$/common/src/main/java/com/dto/SearchInfo.java" />
-        <option value="$PROJECT_DIR$/server/src/main/java/com/services/SearchService.java" />
         <option value="$PROJECT_DIR$/server/src/main/java/com/test/ServerTest.java" />
         <option value="$PROJECT_DIR$/common/src/main/java/objects/StationAnswerObject.java" />
         <option value="$PROJECT_DIR$/common/src/main/java/entity/Journey.java" />
         <option value="$PROJECT_DIR$/common/src/main/java/objects/SearchInfoObject.java" />
         <option value="$PROJECT_DIR$/server/src/main/java/com/services/AddJourneyService.java" />
         <option value="$PROJECT_DIR$/common/src/main/java/com/dto/AddJourneyInfo.java" />
-        <option value="$PROJECT_DIR$/server/src/test/java/com/services/JourneyTest.java" />
-        <option value="$PROJECT_DIR$/common/src/main/java/com/dto/StationInfo.java" />
         <option value="$PROJECT_DIR$/server/src/test/java/com/services/StationServiceTest.java" />
         <option value="$PROJECT_DIR$/server/src/main/java/com/services/StationService.java" />
         <option value="$PROJECT_DIR$/common/src/main/java/entity/Route.java" />
         <option value="$PROJECT_DIR$/client/src/main/java/com/client/ConsoleClient.java" />
+        <option value="$PROJECT_DIR$/server/src/test/java/com/services/TicketTest.java" />
+        <option value="$PROJECT_DIR$/server/src/test/java/com/services/JourneyTest.java" />
+        <option value="$PROJECT_DIR$/server/src/test/java/com/services/SearchServiceTest.java" />
+        <option value="$PROJECT_DIR$/server/src/main/java/com/services/SearchService.java" />
+        <option value="$PROJECT_DIR$/common/src/main/java/com/dto/StationInfo.java" />
       </list>
     </option>
   </component>
@@ -832,62 +827,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.ConsoleClient">
-    <configuration default="false" name="TicketTest.getTest" type="JUnit" factoryName="JUnit" temporary="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.services.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="server" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.services" />
-      <option name="MAIN_CLASS_NAME" value="com.services.TicketTest" />
-      <option name="METHOD_NAME" value="getTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="JourneyTest.checkJourneyNumberTest" type="JUnit" factoryName="JUnit" temporary="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.services.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="server" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.services" />
-      <option name="MAIN_CLASS_NAME" value="com.services.JourneyTest" />
-      <option name="METHOD_NAME" value="checkJourneyNumberTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
     <configuration default="false" name="ConsoleClient" type="Application" factoryName="Application" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -928,6 +867,90 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="client" />
       <envs />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="JourneyTest.addJourneyPositiveTest" type="JUnit" factoryName="JUnit" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="server" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.services" />
+      <option name="MAIN_CLASS_NAME" value="com.services.JourneyTest" />
+      <option name="METHOD_NAME" value="addJourneyPositiveTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="JourneyTest.passNegativeTest" type="JUnit" factoryName="JUnit" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="server" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.services" />
+      <option name="MAIN_CLASS_NAME" value="com.services.JourneyTest" />
+      <option name="METHOD_NAME" value="passNegativeTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="SearchServiceTest.searchTest" type="JUnit" factoryName="JUnit" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="server" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.services" />
+      <option name="MAIN_CLASS_NAME" value="com.services.SearchServiceTest" />
+      <option name="METHOD_NAME" value="searchTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
       <method />
@@ -1202,22 +1225,24 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <list size="8">
+    <list size="9">
       <item index="0" class="java.lang.String" itemvalue="JUnit.StationServiceTest.searchPositiveTest" />
       <item index="1" class="java.lang.String" itemvalue="Application.ServerTest" />
       <item index="2" class="java.lang.String" itemvalue="Glassfish Server.Glassfish 3.1.2.2" />
       <item index="3" class="java.lang.String" itemvalue="Application.OneServer" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.TicketTest.getTest" />
-      <item index="5" class="java.lang.String" itemvalue="JUnit.JourneyTest.checkJourneyNumberTest" />
-      <item index="6" class="java.lang.String" itemvalue="Application.ConsoleClient" />
-      <item index="7" class="java.lang.String" itemvalue="Application.Client" />
+      <item index="4" class="java.lang.String" itemvalue="Application.ConsoleClient" />
+      <item index="5" class="java.lang.String" itemvalue="Application.Client" />
+      <item index="6" class="java.lang.String" itemvalue="JUnit.JourneyTest.addJourneyPositiveTest" />
+      <item index="7" class="java.lang.String" itemvalue="JUnit.JourneyTest.passNegativeTest" />
+      <item index="8" class="java.lang.String" itemvalue="JUnit.SearchServiceTest.searchTest" />
     </list>
     <recent_temporary>
-      <list size="4">
+      <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Application.ConsoleClient" />
-        <item index="1" class="java.lang.String" itemvalue="Application.Client" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.JourneyTest.checkJourneyNumberTest" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.TicketTest.getTest" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.SearchServiceTest.searchTest" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.JourneyTest.passNegativeTest" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.JourneyTest.addJourneyPositiveTest" />
+        <item index="4" class="java.lang.String" itemvalue="Application.Client" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -1278,7 +1303,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32801822" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.785877" order="3" side_tool="false" content_ui="tabs" />
@@ -1296,11 +1321,11 @@
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.785877" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22234763" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2497332" sideWeight="0.73024833" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13553895" sideWeight="0.7585421" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13553895" sideWeight="0.7574032" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2118451" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24012807" sideWeight="0.7574032" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2425968" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2425968" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24493062" sideWeight="0.785877" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="JPA Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1376,83 +1401,9 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/server/src/main/java/com/test/ServerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="19" selection-start="1717" selection-end="1971" vertical-scroll-proportion="0.0">
-          <folding>
-            <marker date="1380477121061" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common/src/main/java/com/dto/StartInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="13" selection-start="112" selection-end="112" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common/src/main/java/objects/StationAnswerObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="21" selection-start="962" selection-end="962" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common/src/main/java/objects/SearchInfoObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="17" selection-start="565" selection-end="565" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/src/test/java/com/services/JourneyTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="114" selection-start="1415" selection-end="1415" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/src/main/java/com/services/AddJourneyService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="92" selection-start="1447" selection-end="1447" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/src/main/java/com/services/JourneyService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="13" selection-start="335" selection-end="335" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common/src/main/java/com/dto/AddJourneyInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="82" selection-start="396" selection-end="396" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/src/test/java/com/services/StationServiceTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="42" column="42" selection-start="1284" selection-end="1284" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common/src/main/java/com/dto/StationInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="45" selection-start="818" selection-end="818" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/src/main/java/com/services/StationService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="77" column="37" selection-start="3095" selection-end="3095" vertical-scroll-proportion="-14.518518">
           <folding />
         </state>
       </provider>
@@ -1471,9 +1422,81 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/test/java/com/services/TicketTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="48" column="6" selection-start="1671" selection-end="2217" vertical-scroll-proportion="0.0">
+          <folding>
+            <marker date="1380486163901" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/com/services/JourneyService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="0" selection-start="1070" selection-end="1070" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/src/main/java/com/dto/JourneyInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="13" selection-start="207" selection-end="207" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/test/java/com/services/JourneyTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="51" selection-start="665" selection-end="665" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/test/java/com/services/SearchServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="41" selection-start="922" selection-end="935" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/com/services/StartService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="13" selection-start="138" selection-end="138" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/src/main/java/objects/StationAnswerObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="13" selection-start="107" selection-end="107" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/com/services/StationService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="77" column="37" selection-start="3095" selection-end="3095" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/src/main/java/com/dto/SearchInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="13" selection-start="62" selection-end="62" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main/java/com/client/ConsoleClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="450" column="71" selection-start="14233" selection-end="14233" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/server/src/main/java/com/services/SearchService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="0" selection-start="2489" selection-end="2489" vertical-scroll-proportion="0.0">
+        <state line="58" column="13" selection-start="2363" selection-end="2363" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#1949#1955#0" expanded="true" />
           </folding>
@@ -1482,15 +1505,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server/src/main/java/com/server_mod/OneServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="94" selection-start="1893" selection-end="1893" vertical-scroll-proportion="0.0">
+        <state line="58" column="60" selection-start="1954" selection-end="1954" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/main/java/com/client/ConsoleClient.java">
+    <entry file="file://$PROJECT_DIR$/common/src/main/java/com/dto/StationInfo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="183" column="11" selection-start="5572" selection-end="5572" vertical-scroll-proportion="0.22919936">
-          <folding />
+        <state line="39" column="71" selection-start="960" selection-end="960" vertical-scroll-proportion="1.014658">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

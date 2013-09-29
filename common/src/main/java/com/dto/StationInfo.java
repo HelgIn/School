@@ -32,8 +32,12 @@ public class StationInfo implements Serializable{
 
     public void print() {
         System.out.println("*************************");
-        for(StationAnswerObject r : result) {
-            System.out.println(r);
+        if(result.size() > 0){
+            for(StationAnswerObject r : result) {
+                System.out.println(r);
+            }
+        } else {
+            System.out.println("Ни одного пассажира не зарегистрировано");
         }
         System.out.println("*************************");
     }
