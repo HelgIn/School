@@ -407,7 +407,7 @@ public class ConsoleClient {
 
     public ConsoleClient() throws IOException {
 
-        client = new Socket("localhost", 8080);
+        client = new Socket("localhost", 9090);
 
         scanner = new Scanner(System.in);
         in = new DataInputStream(client.getInputStream());

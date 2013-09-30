@@ -1,51 +1,44 @@
 package com.server_mod;
-
 import com.dto.*;
 import com.services.*;
-import entity.Schedule;
 
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.Persistence;
 import java.io.*;
-import java.net.ServerSocket;
 import java.net.Socket;
+import java.net.SocketException;
 import java.util.InputMismatchException;
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 
-public class OneServer {
+public class Worker implements Runnable {
+
+    protected Socket clientSocket = null;
     private static Logger log = Logger.getLogger(OneServer.class.getName());
-    public static void main(String[] args)  {
+    EntityManager em = Persistence.createEntityManagerFactory("SCHOOL").createEntityManager();
 
-        ServerSocket serverSocket = null;
-        boolean listening = true;
-        EntityManager em = Persistence.createEntityManagerFactory("SCHOOL").createEntityManager();
-        StartService ss = new StartService(em);
-        StartInfo si = new StartInfo();
-        si.setStations(ss.getStations());
+    public Worker(Socket clientSocket) {
+        this.clientSocket = clientSocket;
+    }
 
-
-
+    @Override
+    public void run() {
         try {
-            serverSocket = new ServerSocket(9090);
-            Socket socket = serverSocket.accept();
 
-            DataInputStream sin = new DataInputStream (socket.getInputStream());
-            DataOutputStream sout = new DataOutputStream(socket.getOutputStream());
+
+            DataInputStream sin = new DataInputStream (clientSocket.getInputStream());
+            DataOutputStream sout = new DataOutputStream(clientSocket.getOutputStream());
 
             ObjectInputStream inObj = new ObjectInputStream(sin);
             ObjectOutputStream outObj = new ObjectOutputStream(sout);
 
-            outObj.writeObject(si);
-            outObj.flush();
-
-
-
             while(true) {
-                Object incomingObject = inObj.readObject();
+                Object incomingObject = null;
+
+                    incomingObject = inObj.readObject();
+
 
                 /*
                  * пришёл запрос поиска
@@ -164,13 +157,12 @@ public class OneServer {
             }
 
 
+        } catch (SocketException e) {
+            System.out.println("Клиент отключился");
         } catch (IOException e) {
-            System.err.println("Could not listen on port: 8080");
-            log.log(Level.OFF, e.getMessage());
-        } catch (ClassNotFoundException e) {
             e.printStackTrace();
-            log.log(Level.OFF, e.getMessage());
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
         }
-
     }
 }
